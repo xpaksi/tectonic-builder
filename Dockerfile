@@ -27,8 +27,9 @@ RUN yay -S --noconfirm tectonic-git && \
     yay -Scc --noconfirm && \
     rm -rf ~/.cache
 
-# Install biber pin it into 2.17 since biblatex is 3.17 and texlive-latexextra
+# Install biber pin it into 2.17 since biblatex is 3.17 and texlive-latexextra and typst
 RUN sudo pacman -U --noconfirm --noprogressbar https://archive.archlinux.org/packages/b/biber/biber-1%3A2.17-2-any.pkg.tar.zst && \
     sudo pacman -S --noconfirm --needed --noprogressbar texlive-latexextra && \
+    sudo pacman -S --noconfirm --needed --noprogressbar typst && \
     sudo pacman -Scc --noconfirm && \
     rm -rf ~/.cache

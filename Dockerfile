@@ -33,3 +33,8 @@ RUN sudo pacman -U --noconfirm --noprogressbar https://archive.archlinux.org/pac
     sudo pacman -S --noconfirm --needed --noprogressbar typst && \
     sudo pacman -Scc --noconfirm && \
     rm -rf ~/.cache
+
+RUN mkdir -p /var/aur-user/.cache/tectonic/formats \
+ && chown -R aur-user:aur-user /var/aur-user/.cache
+
+ENV XDG_CACHE_HOME=/var/aur-user/.cache
